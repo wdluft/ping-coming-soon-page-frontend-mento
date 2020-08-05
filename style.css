@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+:root {
+  --blue: hsl(223, 87%, 63%);
+  --lightBlue: hsl(223, 100%, 88%);
+  --lightRed: hsl(354, 100%, 66%);
+  --gray: hsl(0, 0%, 59%);
+  --darkBlue: hsl(209, 33%, 12%);
+  --white: hsl(0, 0%, 100%);
+
+  --font: 'Libre Franklin', sans-serif;
+  --fontSize: 1.25rem;
+  --containerPadding: 6rem 3.5rem 3.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font);
+  font-size: var(--fontSize);
+  line-height: 1.5;
+  color: var(--darkBlue);
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 768px;
+  padding: var(--containerPadding);
+}
+
+.cta__special {
+  color: var(--darkBlue);
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 2.25rem;
+  color: var(--gray);
+  font-weight: normal;
+  margin-bottom: 2rem;
+}
+
+/* Logo */
+.logo {
+  margin-bottom: 3.5rem;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 5rem;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 3rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+input {
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  border: solid 1px var(--lightBlue);
+  width: 75%;
+}
+
+input::placeholder {
+  color: var(--lightBlue);
+}
+
+input:focus:invalid {
+  border-color: var(--lightRed);
+}
+
+input:invalid + span::before {
+  content: 'Please enter a valid email address';
+  font-size: 1rem;
+  color: var(--lightRed);
+  font-style: italic;
+}
+
+button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  width: 75%;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.175s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--lightBlue);
+}
+
+.displayImg {
+  margin-bottom: 10rem;
+}
+
+/* Footer */
+footer {
+  color: var(--gray);
+}
+
+.socials a {
+  color: var(--blue);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 3.25rem;
+}
+.socials a:hover {
+  color: var(--lightBlue);
+}
+.copyright {
+  margin-bottom: 1rem;
+}
+.attribution {
+  font-size: 11px;
+}
+.attribution a {
+  color: var(--blue);
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3.75rem;
+    margin-bottom: 1rem;
+  }
+
+  /* form */
+  form {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: start;
+    /* justify-content: start; */
+    grid-gap: 1rem;
+  }
+  label {
+    font-size: 1.75rem;
+    grid-column: 1/-1;
+  }
+
+  .inputGroup {
+    align-items: flex-start;
+  }
+  input {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  #errorSpan {
+    grid-row: 3;
+    text-align: left;
+  }
+
+  input:invalid + span::before {
+    text-align: left;
+    padding-left: 2rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
